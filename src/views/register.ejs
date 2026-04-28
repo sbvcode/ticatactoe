@@ -1,0 +1,10 @@
+<%- include('partials_header', { user: null }) %>
+<h1>Create Account</h1>
+<% if (error) { %><p class="error"><%= error %></p><% } %>
+<form method="post" action="/register" class="auth-form">
+  <label>Email <input type="email" name="email" required /></label>
+  <label>Password <input type="password" name="password" required minlength="8" /></label>
+  <button type="submit">Create Account</button>
+</form>
+<p>Already have an account? <a href="/login">Login</a></p>
+<%- include('partials_footer') %>

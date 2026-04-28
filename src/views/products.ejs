@@ -1,0 +1,22 @@
+<%- include('partials_header', { user: user }) %>
+<h1>Product Listing</h1>
+<p>Items in cart: <strong><%= cartCount %></strong></p>
+<section class="grid">
+  <% products.forEach((product) => { %>
+  <article class="card">
+    <img src="<%= product.image %>" alt="<%= product.name %>" />
+    <h2><%= product.name %></h2>
+    <p><%= product.description %></p>
+    <p class="price">$<%= toMoney(product.priceCents) %></p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="productId" value="<%= product.id %>" />
+      <label>
+        Qty
+        <input type="number" name="quantity" value="1" min="1" max="10" />
+      </label>
+      <button type="submit">Add to Cart</button>
+    </form>
+  </article>
+  <% }) %>
+</section>
+<%- include('partials_footer') %>
