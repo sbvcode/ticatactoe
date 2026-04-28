@@ -1,0 +1,21 @@
+* { box-sizing: border-box; font-family: Inter, Arial, sans-serif; }
+body { margin: 0; background: #fafafa; color: #222; }
+header { background: #101828; color: #fff; padding: 12px 20px; }
+nav { display: flex; gap: 12px; align-items: center; }
+nav a, nav span { color: #fff; text-decoration: none; }
+nav form { margin: 0; }
+nav button { background: #fff; border: none; padding: 6px 10px; cursor: pointer; }
+main { padding: 24px; max-width: 1100px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card { border: 1px solid #ddd; border-radius: 10px; padding: 14px; background: #fff; }
+.card img { width: 100%; border-radius: 8px; height: 160px; object-fit: cover; }
+.price { font-size: 1.2rem; font-weight: 700; }
+form { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.auth-form { flex-direction: column; align-items: flex-start; max-width: 320px; }
+.auth-form input { width: 100%; padding: 8px; margin-top: 4px; }
+button { background: #0f62fe; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { border: 1px solid #ddd; padding: 10px; }
+.grand { font-size: 1.25rem; font-weight: 700; margin-top: 12px; }
+.error { color: #b00020; }
+.google-btn { display: inline-block; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; }

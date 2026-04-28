@@ -1,0 +1,30 @@
+<%- include('partials_header', { user: user }) %>
+<h1>Checkout</h1>
+<% if (!items.length) { %>
+<p>Your cart is empty. <a href="/products">Browse products</a>.</p>
+<% } else { %>
+<table>
+  <thead>
+    <tr><th>Product</th><th>Qty</th><th>Unit</th><th>Total</th></tr>
+  </thead>
+  <tbody>
+    <% items.forEach((item) => { %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.quantity %></td>
+      <td>$<%= toMoney(item.product.priceCents) %></td>
+      <td>$<%= toMoney(item.lineTotalCents) %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<p class="grand">Order total: $<%= toMoney(totalCents) %></p>
+<% if (stripeEnabled) { %>
+<form action="/create-checkout-session" method="post">
+  <button type="submit">Pay with Stripe Checkout</button>
+</form>
+<% } else { %>
+<p>Stripe not configured. Add your <code>STRIPE_SECRET_KEY</code> to enable payment.</p>
+<% } %>
+<% } %>
+<%- include('partials_footer') %>

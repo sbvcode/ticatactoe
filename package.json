@@ -1,0 +1,22 @@
+{
+  "name": "ticatactoe-ecommerce-portal",
+  "version": "1.0.0",
+  "description": "Starter ecommerce portal with products, checkout, account creation, Google OAuth, and Stripe integration",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node --check src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "stripe": "^16.5.0"
+  }
+}
